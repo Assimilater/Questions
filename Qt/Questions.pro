@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    tablerow.cpp
 
-HEADERS  += mainwindow.hpp
+HEADERS  += mainwindow.hpp \
+    tablerow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    tablerow.ui
