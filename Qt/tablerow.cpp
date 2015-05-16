@@ -3,26 +3,42 @@
 #include <stdlib.h>
 #include <time.h>
 
-TableRow::~TableRow() { delete ui; }
-TableRow::TableRow(QWidget *parent) : QWidget(parent), ui(new Ui::TableRow) {
+void TableRow::setupUi(int lines, const int* words) {
 	ui->setupUi(this);
 	expand();
 
 	// Setup slots
 	connect(ui->toggle, SIGNAL(clicked()), this, SLOT(toggle()));
 
-	// Fill notes with random length of text
+	// Generate text
 	QString text;
-	srand(time(NULL));
-	int lines = rand() % 7;
 	for (int i = 0; i < lines; ++i) {
-		int words = rand() % 30 + 1;
-		for (int j = 0; j < words; ++j) {
-			text += "Text ";
+		QString line;
+		for (int j = 0; j < words[i]; ++j) {
+			line += "Text ";
 		}
+		text += line.trimmed();
 		text += "\n";
 	}
-	ui->lblNotes->setText(text);
+	ui->lblNotes->setText(text.trimmed());
+}
+
+TableRow::~TableRow() { delete ui; }
+TableRow::TableRow() : ui(new Ui::TableRow) {
+	// Generate random length of text
+	srand(time(NULL));
+	int lines = rand() % 7;
+	int* words = new int[lines];
+	for (int i = 0; i < lines; ++i) {
+		words[i] = rand() % 30 + 1;
+	}
+
+	setupUi(lines, words);
+	delete[] words;
+}
+
+TableRow::TableRow(int lines, const int* words) : ui(new Ui::TableRow) {
+	setupUi(lines, words);
 }
 
 void TableRow::expand() {
