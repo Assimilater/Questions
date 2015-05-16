@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>tablerow</class>
- <widget class="QWidget" name="tablerow">
+ <class>TableRow</class>
+ <widget class="QWidget" name="TableRow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -188,26 +188,43 @@
        <rect>
         <x>746</x>
         <y>0</y>
-        <width>84</width>
+        <width>83</width>
         <height>30</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
-      <widget class="QPushButton" name="btnToggle">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>1</y>
-         <width>81</width>
-         <height>28</height>
-        </rect>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
        </property>
-       <property name="text">
-        <string>Toggle</string>
+       <property name="leftMargin">
+        <number>1</number>
        </property>
-      </widget>
+       <property name="topMargin">
+        <number>1</number>
+       </property>
+       <property name="rightMargin">
+        <number>1</number>
+       </property>
+       <property name="bottomMargin">
+        <number>1</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="toggle">
+         <property name="text">
+          <string>Toggle</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>

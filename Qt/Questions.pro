@@ -8,16 +8,15 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Problems
+TARGET = Questions
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
-        mainwindow.cpp \
+    mainwindow.cpp \
     tablerow.cpp
 
 HEADERS  += mainwindow.hpp \
-    tablerow.h
+    tablerow.hpp
 
 FORMS    += mainwindow.ui \
     tablerow.ui
