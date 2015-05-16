@@ -3,6 +3,6 @@ This repository is simply a place for me to post simplified code that replicates
 
 No code should exist in the master branch at any time.
 
-Questions for different platforms will be grouped, with a template in the branch "group/_default"
+Questions for different platforms will be grouped, with a template in the branch "group/_template"
 
 Each problem will have a unique feature branch (ie Qt/ScrollAreaMinimumSizePolicy)
